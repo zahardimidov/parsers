@@ -18,12 +18,12 @@ class App():
         self.window=window
         self.home_page=CTkFrame(window, width=width, height=height, fg_color='white')
 
-        CTkButton(master=self.home_page, text="Start", command=self.start_parse).place(relx=0.5, rely=0.1, anchor=CENTER)
+        CTkButton(master=self.home_page, text="Start", command=self.start_parse).place(relx=0.5, rely=0.4, anchor=CENTER)
 
         self.home_page.pack()
 
-        self.load_page=CTkFrame(window, width=400, height=500, fg_color='white')
-        self.load_label=CTkLabel(master=self.load_page, width=200, text="Loading...")
+        self.load_page=CTkFrame(window, width=width, height=height, fg_color='white')
+        self.load_label=CTkLabel(master=self.load_page, width=width*0.8, text="Loading...")
         self.load_label.place(relx=0.5, rely=0.35, anchor=CENTER)
         self.progressbar = CTkProgressBar(master=self.load_page)
         self.progressbar.place(relx=0.5, rely=0.45, anchor=CENTER)
@@ -56,5 +56,5 @@ class App():
         messagebox.showwarning("Error", text)
 
 if __name__=='__main__':
-    application = App(400,500)
+    application = App(300,300)
     application.window.mainloop()
