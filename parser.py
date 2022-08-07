@@ -73,7 +73,7 @@ class Parser():
 
         ### Parse all items links from every page ###
         all_items_links=[]
-        all_pages=self.parse(session, all_pages_links[:1])
+        all_pages=self.parse(session, all_pages_links)
         for page in all_pages:
             page_items_links=[self.domain+title.find("a", class_="product-link").get("href") for title in page.find_all("div", class_="product-title")]
             all_items_links.extend(page_items_links)
