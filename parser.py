@@ -37,7 +37,7 @@ class Parser():
         
         price=int("".join(re.findall("\d", item.find("div", class_="price").text)))
 
-        try: description=item.find("div", class_="product-description").text.strip()
+        try: description=item.find("div", id="product-description").text.strip()
         except AttributeError: description = "-"
 
         try:
